@@ -39,10 +39,10 @@ class ContactWorksheet : AppCompatActivity() {
 
         val cr:Cursor?= uri?.let { getcr.query(it,myprojection,null,null,null) }
         val str = ArrayList<String>()
-
+        str.add("Name                                                Phone Num")
         while(cr!!.moveToNext()) {
 
-            val s =cr.getString(1);
+            val s =cr.getString(0)+"                                               "+cr.getString(1);
             str.add(s);
         }
 
